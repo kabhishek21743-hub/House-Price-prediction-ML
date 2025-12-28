@@ -27,7 +27,7 @@ scaled_X = scaler.fit_transform(X)
 final_value = scaler.transform([all_value])
 
 model = st.cache(RandomForestRegressor)()
-st.cache(model.fit(X,y))
+model.fit(X,y)
 house_price = model.predict(final_value)[0]
 with st.spinner('Predicting House price'):
   time.sleep(1)
@@ -36,6 +36,7 @@ st.success(msg)
 
 
 st.markdown('''**Design and Developed by: Abhishek kumar***''')
+
 
 
 
